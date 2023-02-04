@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hackText: {fileID: 0}
   director: {fileID: 0}
+  slider: {fileID: 0}
 --- !u!135 &6797468881679298976
 SphereCollider:
   m_ObjectHideFlags: 0

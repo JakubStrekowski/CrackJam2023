@@ -44,6 +44,7 @@ GameObject:
   m_Component:
   - component: {fileID: 338158359698513349}
   - component: {fileID: 1182904208584832323}
+  - component: {fileID: 7624318605672374326}
   m_Layer: 0
   m_Name: FirstLevelTimeline
   m_TagString: Untagged
@@ -91,6 +92,18 @@ PlayableDirector:
   m_ExposedReferences:
     m_References:
     - e045555a42f385942b80c03c41c759f6: {fileID: 6399550489153662680}
+--- !u!114 &7624318605672374326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4816194901896860704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0022bc22355519748aa92f7af1de5297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1182904207468237453
 PrefabInstance:
   m_ObjectHideFlags: 0
