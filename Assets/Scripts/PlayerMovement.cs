@@ -26,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
     public float DTTime;
     public float DTFade;
 
+    public AudioSource DashAudioSource;
+
     public void Movement ( InputAction.CallbackContext ctx )
     {
         var cameraTransform = Camera.main.transform;
@@ -53,7 +55,12 @@ public class PlayerMovement : MonoBehaviour
                 DashDistance, DashMask);
             var distance = hasHit ? hit.distance - radius : DashDistance;
 
-            transform.position += _currentMovement.normalized * distance;
+            Body.position += _currentMovement.normalized * distance;
+
+            DashAudioSource.panStereo = _currentMovement.x;
+            DashAudioSource.Play();
+            
+            GetComponent<PlayerDeath>().Immune();
         }
     }
     

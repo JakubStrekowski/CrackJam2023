@@ -63,4 +63,13 @@ public class FirewallInhibitor : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            onEnteredOnTime?.Invoke();
+            gameObject.SetActive(false);
+        }
+    }
 }
