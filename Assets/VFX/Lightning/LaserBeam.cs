@@ -36,6 +36,11 @@ public class LaserBeam : MonoBehaviour
                 MaxDistance, LayerMask))
             {
                 distance = hit.distance + ShootingTransform.localPosition.z;
+
+                if (DealDamage && hit.rigidbody != null && hit.rigidbody.CompareTag("Player"))
+                {
+                    hit.rigidbody.GetComponent<PlayerDeath>().TrySetDeath();
+                }
             }
 
             var particlesShape = Particles.shape;
@@ -46,7 +51,7 @@ public class LaserBeam : MonoBehaviour
                 beam.Distance = distance + .5f;
             }
 
-            LaserEnd.transform.localPosition = Vector3.forward * distance;
+            LaserEnd.transform.position = transform.position + transform.forward * distance;
         }
 
         var prop = new MaterialPropertyBlock();
