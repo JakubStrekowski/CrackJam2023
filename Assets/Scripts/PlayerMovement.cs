@@ -12,10 +12,15 @@ public class PlayerMovement : MonoBehaviour
     private Transform _transform;
     private Vector3 _currentMovement;
 
+    public Animator Animator;
+
     public void Movement ( InputAction.CallbackContext ctx )
     {
+        var cameraTransform = Camera.main.transform;
         Vector2 readValue = ctx.ReadValue<Vector2>() * speedModifier;
-        _currentMovement = new Vector3(readValue.x, 0, readValue.y);
+        var forward = Vector3.ProjectOnPlane(cameraTransform.forward, Vector3.up).normalized * readValue.y;
+        var side = Vector3.ProjectOnPlane(cameraTransform.right, Vector3.up).normalized * readValue.x;
+        _currentMovement = Vector3.ClampMagnitude(forward + side, 1f);
     }
     
     private void Awake()
@@ -27,7 +32,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_currentMovement != Vector3.zero)
         {
-            _transform.position = _transform.position + (transform.rotation * _currentMovement * speedModifier) ;
+            _transform.position = _transform.position + (_currentMovement * speedModifier * Time.fixedDeltaTime) ;
+            _transform.LookAt(transform.position + _currentMovement, Vector3.up);
+            Animator.SetBool("IsRunning", true);
+        }
+        else
+        {
+            Animator.SetBool("IsRunning", false);
         }
     }
 }
