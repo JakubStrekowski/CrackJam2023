@@ -11,7 +11,10 @@ public class FirewallInhibitor : MonoBehaviour
     [SerializeField] private Slider compromiseSlider;
     [SerializeField] private Image sliderFill;
     [SerializeField] private float timeToCompromise = 6f;
+    [SerializeField] private UnityEvent onSpawned;
     [SerializeField] private UnityEvent onCompromised;
+    [SerializeField] private UnityEvent onEnteredOnTime;
+    
     private float _currentCountdown;
 
     private Sequence _sequence;
@@ -19,6 +22,7 @@ public class FirewallInhibitor : MonoBehaviour
     {
         _currentCountdown = timeToCompromise;
         compromiseSlider.gameObject.SetActive(true);
+        onSpawned?.Invoke();
         
         _sequence = DOTween.Sequence()
             .Append(sliderFill.DOColor(new Color(1f, 0.4231346f, 0.3921568f), 0.4f))
@@ -55,6 +59,7 @@ public class FirewallInhibitor : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
+            onEnteredOnTime?.Invoke();
             gameObject.SetActive(false);
         }
     }
