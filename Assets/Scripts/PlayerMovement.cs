@@ -16,6 +16,16 @@ public class PlayerMovement : MonoBehaviour
     public Animator Animator;
     public Rigidbody Body;
 
+    public float DashDistance;
+    public float DashCooldown;
+    public LayerMask DashMask;
+    public SphereCollider DashCollider;
+    private float _lastDashTime = float.MinValue;
+
+    public TrailRenderer[] DashTrails;
+    public float DTTime;
+    public float DTFade;
+
     public void Movement ( InputAction.CallbackContext ctx )
     {
         var cameraTransform = Camera.main.transform;
@@ -23,6 +33,28 @@ public class PlayerMovement : MonoBehaviour
         var forward = Vector3.ProjectOnPlane(cameraTransform.forward, Vector3.up).normalized * readValue.y;
         var side = Vector3.ProjectOnPlane(cameraTransform.right, Vector3.up).normalized * readValue.x;
         _currentMovement = Vector3.ClampMagnitude(forward + side, 1f);
+    }
+
+    public void Dash(InputAction.CallbackContext ctx)
+    {
+        if (_currentMovement != Vector3.zero && Time.time > _lastDashTime + DashCooldown)
+        {
+            _lastDashTime = Time.time;
+
+            foreach (var trail in DashTrails)
+            {
+                trail.time = DTTime;
+                trail.DOTime(0f, DTFade);
+            }
+
+            var position = DashCollider.transform.position;
+            var radius = DashCollider.radius;
+            var hasHit = Physics.SphereCast(position, radius, _currentMovement.normalized, out RaycastHit hit,
+                DashDistance, DashMask);
+            var distance = hasHit ? hit.distance - radius : DashDistance;
+
+            transform.position += _currentMovement.normalized * distance;
+        }
     }
     
     private void Awake()
