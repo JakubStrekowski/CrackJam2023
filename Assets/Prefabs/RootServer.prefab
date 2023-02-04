@@ -157,6 +157,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: f484333b-7e97-45b0-873b-3c6766244380
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 904059f0-557a-4302-9e43-c22e5eaac353
+    m_ActionName: Player/Dash[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -174,7 +178,7 @@ GameObject:
   - component: {fileID: 8604932481204831627}
   - component: {fileID: 2880488482807120483}
   - component: {fileID: 6664728857112124044}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

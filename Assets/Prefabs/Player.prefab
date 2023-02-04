@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6338660217179781559}
   - component: {fileID: 6338660217179781548}
   - component: {fileID: 7086075032116829237}
+  - component: {fileID: 3220641363214092821}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -115,7 +116,19 @@ MonoBehaviour:
     m_ActionId: 1a503964-43e7-45a6-aa62-19312d8607df
     m_ActionName: Player/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3220641363214092821}
+        m_TargetAssemblyTypeName: PlayerDeath, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 9335f431-a357-4dae-b56f-1138c8f2a006
     m_ActionName: Player/Interact[/Keyboard/e]
   - m_PersistentCalls:
@@ -179,6 +192,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3220641363214092821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6338660217179781558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15332f8c4f83bfb48a52dcbd3e883057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathInfo: {fileID: 0}
+  OnPlayerDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1428624775111154083
 PrefabInstance:
   m_ObjectHideFlags: 0
