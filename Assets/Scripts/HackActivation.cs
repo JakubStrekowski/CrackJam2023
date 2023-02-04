@@ -1,17 +1,19 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Playables;
-using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class HackActivation : MonoBehaviour
 {
     [SerializeField] private GameObject hackText;
     [SerializeField] private PlayableDirector director;
+    [SerializeField] private Slider slider;
+
+    private bool _wasActivated;
     private void OnTriggerEnter(Collider other)
     {
+        if (_wasActivated) return;
+        
         hackText.SetActive(true);
     }
 
@@ -22,8 +24,12 @@ public class HackActivation : MonoBehaviour
 
     public void OnStartHack(InputAction.CallbackContext ctx )
     {
+        if (_wasActivated) return;
+        if (!hackText.activeInHierarchy) return;
+
         hackText.SetActive(false);
         director.Play();
-        this.enabled = false;
+        _wasActivated = true;
+        slider.gameObject.SetActive(true);
     }
 }
