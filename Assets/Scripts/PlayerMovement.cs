@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_currentMovement != Vector3.zero)
         {
-            _transform.position = _transform.position + _currentMovement;
+            _transform.position = _transform.position + (transform.rotation * _currentMovement * speedModifier) ;
         }
     }
 }
