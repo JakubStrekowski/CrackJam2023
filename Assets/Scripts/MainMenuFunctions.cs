@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
@@ -13,6 +14,8 @@ public class MainMenuFunctions : MonoBehaviour
 
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider soundsSlider;
+    
+    [SerializeField] private TMP_Text titleText;
     public void StartPlaying()
     {
         SceneManager.LoadScene(1);
@@ -30,6 +33,8 @@ public class MainMenuFunctions : MonoBehaviour
         OnMusicValueChange();
         soundsSlider.value = 0f;
         OnSoundsValueChange();
+
+        StartCoroutine(nameof(BlinkPrompt));
     }
 
     public void OnMusicValueChange()
@@ -39,5 +44,16 @@ public class MainMenuFunctions : MonoBehaviour
     public void OnSoundsValueChange()
     {
         soundsVolume.audioMixer.SetFloat("SoundsVol", soundsSlider.value);
+    }
+
+    private IEnumerator BlinkPrompt()
+    {
+        while (true)
+        {
+            titleText.text = ">r00t admin";
+            yield return new WaitForSeconds(1);
+            titleText.text = ">r00t admin_";
+            yield return new WaitForSeconds(1);
+        }
     }
 }
