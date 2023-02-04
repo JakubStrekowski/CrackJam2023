@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteAlways]
 public class LaserBeam : MonoBehaviour
 {
     public float MaxDistance;
@@ -13,6 +14,9 @@ public class LaserBeam : MonoBehaviour
     public ParticleSystem Particles;
     public Animator Animator;
     public bool UpdateStuff;
+
+    public MeshRenderer PifPafRenderer;
+    [ColorUsage(false, true)] public Color PifPafColor;
 
     [ContextMenu("Shoot")]
     public void Shoot()
@@ -39,5 +43,10 @@ public class LaserBeam : MonoBehaviour
                 beam.Distance = distance + .5f;
             }
         }
+
+        var prop = new MaterialPropertyBlock();
+        prop.SetColor("_Glow", PifPafColor);
+            
+        PifPafRenderer.SetPropertyBlock(prop);
     }
 }
