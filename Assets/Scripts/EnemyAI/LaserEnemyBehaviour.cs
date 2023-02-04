@@ -52,10 +52,10 @@ public class LaserEnemyBehaviour : EnemyBehaviour
         {
             default:
             case EMoveDirection.Left:
-                _transform.position = transform.position + (transform.rotation * Vector3.left) * moveSpeed;
+                _transform.position += (_transform.rotation * Vector3.left) * moveSpeed;
                 break;
             case EMoveDirection.Right:
-                _transform.position = transform.position + (transform.rotation * Vector3.right) * moveSpeed;
+                _transform.position += (_transform.rotation * Vector3.right) * moveSpeed;
                 break;
         }
     }
