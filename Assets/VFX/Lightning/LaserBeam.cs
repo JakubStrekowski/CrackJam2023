@@ -14,6 +14,9 @@ public class LaserBeam : MonoBehaviour
     public ParticleSystem Particles;
     public Animator Animator;
     public bool UpdateStuff;
+    public bool DealDamage;
+
+    public GameObject LaserEnd;
 
     public MeshRenderer PifPafRenderer;
     [ColorUsage(false, true)] public Color PifPafColor;
@@ -42,11 +45,15 @@ public class LaserBeam : MonoBehaviour
             {
                 beam.Distance = distance + .5f;
             }
+
+            LaserEnd.transform.localPosition = Vector3.forward * distance;
         }
 
         var prop = new MaterialPropertyBlock();
         prop.SetColor("_Glow", PifPafColor);
             
         PifPafRenderer.SetPropertyBlock(prop);
+        
+        LaserEnd.SetActive(DealDamage);
     }
 }

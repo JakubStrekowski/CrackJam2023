@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
@@ -13,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 _currentMovement;
 
     public Animator Animator;
+    public Rigidbody Body;
 
     public void Movement ( InputAction.CallbackContext ctx )
     {
@@ -32,13 +34,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_currentMovement != Vector3.zero)
         {
-            _transform.position = _transform.position + (_currentMovement * speedModifier * Time.fixedDeltaTime) ;
+            Body.velocity = _currentMovement * speedModifier;
+            // _transform.position = _transform.position + (_currentMovement * speedModifier * Time.fixedDeltaTime) ;
             _transform.LookAt(transform.position + _currentMovement, Vector3.up);
             Animator.SetBool("IsRunning", true);
         }
         else
         {
             Animator.SetBool("IsRunning", false);
+            Body.velocity = Vector3.zero;
         }
     }
 }

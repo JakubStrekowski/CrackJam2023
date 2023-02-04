@@ -31,7 +31,7 @@ public class SingleLaserBeam : MonoBehaviour
         for (int i = 0; i < PointCount; i++)
         {
             var value = i / div;
-            renderer.SetPosition(i, transform.forward * Distance * value);
+            renderer.SetPosition(i, transform.position + transform.forward * Distance * value);
         }
 
         renderer.widthMultiplier = Width;
