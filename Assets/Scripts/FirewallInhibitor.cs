@@ -16,6 +16,8 @@ public class FirewallInhibitor : MonoBehaviour
     [SerializeField] private UnityEvent onEnteredOnTime;
     [SerializeField] private PlayerDeath playerDeath;
 
+    public GameObject SuccessParticles;
+
     public float ColliderActivationTime;
     public Collider Collider;
     
@@ -137,6 +139,9 @@ public class FirewallInhibitor : MonoBehaviour
         gameObject.SetActive(false);
         HasPlayer = false;
         Load = 0f;
+
+        SuccessParticles.transform.position = transform.position;
+        SuccessParticles.SetActive(true);
     }
 
     private void Fail()
