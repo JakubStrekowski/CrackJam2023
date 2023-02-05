@@ -23,7 +23,7 @@ public class SingleLaserBeam : MonoBehaviour
         GetComponent<LineRenderer>().enabled = false;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         var renderer = GetComponent<LineRenderer>();
         renderer.positionCount = PointCount;

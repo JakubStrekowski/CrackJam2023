@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,11 @@ public class TargetSpawner : MonoBehaviour
     public GameObject Target;
 
     private int _index;
+
+    private void Awake()
+    {
+        Target.SetActive(false);
+    }
 
     public void Next()
     {

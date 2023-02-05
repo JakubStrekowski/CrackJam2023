@@ -22,6 +22,7 @@ public class BoxObstacle : MonoBehaviour
         _transform = transform;
     }
     
+    [ContextMenu("Disable")]
     public void SetDisable()
     {
         _transform.DOMoveY(backYPos, timeToRise).SetEase(hideEase)
