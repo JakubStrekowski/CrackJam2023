@@ -316,6 +316,17 @@ public partial class @PlayerActionsSettings : IInputActionCollection2, IDisposab
                 },
                 {
                     ""name"": """",
+                    ""id"": ""46cdc978-5a5a-4aae-a727-6e877edd579b"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""bbce606d-fe8a-40f9-82f7-a26de26b36e0"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",

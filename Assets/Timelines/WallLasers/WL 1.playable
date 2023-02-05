@@ -206,7 +206,6 @@ MonoBehaviour:
   m_Markers:
     m_Objects:
     - {fileID: -2630371071196560389}
-    - {fileID: 1879394444258697163}
     - {fileID: 643254999896696207}
     - {fileID: 8163658276969065240}
 --- !u!114 &-6541884762727000049
@@ -306,22 +305,6 @@ MonoBehaviour:
   m_Name: Signal Emitter(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   m_Time: 17.674418604651162
-  m_Retroactive: 0
-  m_EmitOnce: 0
-  m_Asset: {fileID: 11400000, guid: 1bceb5ed48a0a442e954231be7db9352, type: 2}
---- !u!114 &-5069918059210402747
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
-  m_Name: Signal Emitter(Clone)(Clone)(Clone)(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  m_Time: 10.232558139534884
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 1bceb5ed48a0a442e954231be7db9352, type: 2}
@@ -672,7 +655,6 @@ MonoBehaviour:
   m_Markers:
     m_Objects:
     - {fileID: -8737802576818300844}
-    - {fileID: -5069918059210402747}
     - {fileID: -3215985895118525957}
     - {fileID: -3880488805366943836}
 --- !u!114 &643254999896696207
@@ -717,22 +699,6 @@ MonoBehaviour:
     - {fileID: -9205773913993440793}
     - {fileID: 6634210944903134521}
     - {fileID: 5798397541916836282}
---- !u!114 &1879394444258697163
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
-  m_Name: Signal Emitter(Clone)(Clone)(Clone)(Clone)(Clone)
-  m_EditorClassIdentifier: 
-  m_Time: 10.232558139534884
-  m_Retroactive: 0
-  m_EmitOnce: 0
-  m_Asset: {fileID: 11400000, guid: 1bceb5ed48a0a442e954231be7db9352, type: 2}
 --- !u!114 &2110248886152776076
 MonoBehaviour:
   m_ObjectHideFlags: 1
