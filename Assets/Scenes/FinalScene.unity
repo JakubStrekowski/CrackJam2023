@@ -184,8 +184,9 @@ MonoBehaviour:
   m_text: 'You successfully managed to infiltrate the Smart Machine Technologies
     infrastructure and gained <b>root</b> capabilities. '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c3dd5ba6de7566740a094587187dbe9f, type: 2}
+  m_sharedMaterial: {fileID: -6641103973749917018, guid: c3dd5ba6de7566740a094587187dbe9f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -354,8 +355,9 @@ AudioSource:
   m_GameObject: {fileID: 547525039}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 3473915669442129867, guid: cde86c3813a21d24f91f8559b71f138c,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 15a09754788e5d2419743dfc76dc70a9, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -767,14 +769,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: You'll have to try again, and they will have even more secure firewall...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c3dd5ba6de7566740a094587187dbe9f, type: 2}
+  m_sharedMaterial: {fileID: -6641103973749917018, guid: c3dd5ba6de7566740a094587187dbe9f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967040
+    rgba: 16776960
   m_fontColor: {r: 0, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -877,7 +880,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 15, y: -186.1}
+  m_AnchoredPosition: {x: 15, y: -204.8}
   m_SizeDelta: {x: 435, y: 125.2}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &784233694
@@ -903,8 +906,9 @@ MonoBehaviour:
   m_text: Although, once you tried to release a single person from the 'AI' grid,
     the system locked you out and prevented you from freeing any more people.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c3dd5ba6de7566740a094587187dbe9f, type: 2}
+  m_sharedMaterial: {fileID: -6641103973749917018, guid: c3dd5ba6de7566740a094587187dbe9f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1014,7 +1018,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 11.900024, y: -63.6}
-  m_SizeDelta: {x: 433.8, y: 221.3}
+  m_SizeDelta: {x: 433.8, y: 256.5}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &881960771
 MonoBehaviour:
@@ -1508,10 +1512,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '>Thanks for playing! <3'
+  m_text: ">Thanks for playing! \n<3"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c3dd5ba6de7566740a094587187dbe9f, type: 2}
+  m_sharedMaterial: {fileID: -6641103973749917018, guid: c3dd5ba6de7566740a094587187dbe9f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1735,8 +1740,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Good ending #1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c3dd5ba6de7566740a094587187dbe9f, type: 2}
+  m_sharedMaterial: {fileID: -6641103973749917018, guid: c3dd5ba6de7566740a094587187dbe9f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
