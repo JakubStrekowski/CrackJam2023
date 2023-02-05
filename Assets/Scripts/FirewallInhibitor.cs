@@ -14,6 +14,7 @@ public class FirewallInhibitor : MonoBehaviour
     [SerializeField] private UnityEvent onSpawned;
     [SerializeField] private UnityEvent onCompromised;
     [SerializeField] private UnityEvent onEnteredOnTime;
+    [SerializeField] private PlayerDeath playerDeath;
 
     public float ColliderActivationTime;
     public Collider Collider;
@@ -21,6 +22,19 @@ public class FirewallInhibitor : MonoBehaviour
     private float _currentCountdown;
 
     private Sequence _sequence;
+
+    private void Start()
+    {
+        if (playerDeath != null)
+        {
+            playerDeath.OnPlayerTutorialDeath.AddListener(() =>
+            {
+                gameObject.SetActive(false);
+                gameObject.SetActive(true);
+            });
+        }
+    }
+
     public void OnEnable()
     {
         _currentCountdown = timeToCompromise;

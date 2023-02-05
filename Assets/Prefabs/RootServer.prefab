@@ -54,6 +54,9 @@ MonoBehaviour:
   director: {fileID: 0}
   slider: {fileID: 0}
   particleSystemRoot: {fileID: 969300593101251086}
+  directorDelay: 1.5
+  laserToDisable: {fileID: 0}
+  restartDecider: {fileID: 11400000, guid: 6805dfed9272a784999d00bce42eb52a, type: 2}
 --- !u!135 &6797468881679298976
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -367,7 +370,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1577251929796399700
 Transform:
   m_ObjectHideFlags: 0
