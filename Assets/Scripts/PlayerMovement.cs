@@ -27,7 +27,19 @@ public class PlayerMovement : MonoBehaviour
     public float DTFade;
 
     public AudioSource DashAudioSource;
+#if UNITY_EDITOR
+    public float MoreSpeed = 2f;
 
+    private void Update()
+    {
+        Time.timeScale = Keyboard.current.leftShiftKey.isPressed ? MoreSpeed : 1f;
+
+        if (Keyboard.current.leftCommandKey.wasPressedThisFrame)
+        {
+            Debug.Break();
+        }
+    }
+#endif
     public void Movement ( InputAction.CallbackContext ctx )
     {
         var cameraTransform = Camera.main.transform;

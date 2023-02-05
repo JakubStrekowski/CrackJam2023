@@ -21,4 +21,10 @@ public class TargetSpawner : MonoBehaviour
         Target.transform.localPosition = Positions[_index++];
         Target.SetActive(true);
     }
+
+    public void Select(int i)
+    {
+        _index = i;
+        Next();
+    }
 }

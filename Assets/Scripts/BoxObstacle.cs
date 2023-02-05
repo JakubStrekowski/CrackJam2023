@@ -32,6 +32,7 @@ public class BoxObstacle : MonoBehaviour
     private void OnEnable()
     {
         onSpawned?.Invoke();
+        _transform.position = new Vector3(_transform.position.x, backYPos, _transform.position.z);
 
         _transform.DOMoveY(targetYPos, timeToRise).SetEase(riseEase);
     }

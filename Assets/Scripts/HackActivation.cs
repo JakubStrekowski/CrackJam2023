@@ -15,6 +15,9 @@ public class HackActivation : MonoBehaviour
     [SerializeField] private float directorDelay = 1.5f;
     [SerializeField] private LaserBeam laserToDisable;
     [SerializeField] private RestartDecider restartDecider;
+    public GameObject TutorialTarget;
+
+    public bool SkipTutorial;
 
     private Collider col;
     private bool _wasActivated;
@@ -27,6 +30,16 @@ public class HackActivation : MonoBehaviour
     private void Start()
     {
         col.enabled = false;
+
+        if (SkipTutorial)
+        {
+            hackText.SetActive(true);
+            OnStartHack(default);
+
+            var pos = transform.position;
+            pos.y = 0;
+            FindObjectOfType<PlayerMovement>().transform.position = pos;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -57,6 +70,8 @@ public class HackActivation : MonoBehaviour
 
         transform.DOMoveY(-1.5f, 2);
         col.enabled = false;
+        
+        TutorialTarget.SetActive(false);
     }
 
     public void LiftTheRoot()
@@ -68,6 +83,7 @@ public class HackActivation : MonoBehaviour
 
     private IEnumerator DirectorDelay()
     {
+        if(!SkipTutorial)
         yield return new WaitForSeconds(directorDelay);
         director.Play();
     }
