@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -11,6 +12,9 @@ public class HackActivation : MonoBehaviour
     [SerializeField] private PlayableDirector director;
     [SerializeField] private Slider slider;
     [SerializeField] private GameObject particleSystemRoot;
+    [SerializeField] private float directorDelay = 1.5f;
+    [SerializeField] private LaserBeam laserToDisable;
+    [SerializeField] private RestartDecider restartDecider;
 
     private Collider col;
     private bool _wasActivated;
@@ -18,6 +22,11 @@ public class HackActivation : MonoBehaviour
     private void Awake()
     {
         col = GetComponent<Collider>();
+    }
+
+    private void Start()
+    {
+        col.enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -39,11 +48,26 @@ public class HackActivation : MonoBehaviour
 
         particleSystemRoot.SetActive(false);
         hackText.SetActive(false);
-        director.Play();
         _wasActivated = true;
         slider.gameObject.SetActive(true);
+        StartCoroutine(nameof(DirectorDelay));
+        laserToDisable.ConstantShooting = false;
+        restartDecider.isTutorialDeath = false;
 
         transform.DOMoveY(-1.5f, 2);
         col.enabled = false;
+    }
+
+    public void LiftTheRoot()
+    {
+        transform.DOMoveY(0.5f, 1);
+        particleSystemRoot.SetActive(true);
+        col.enabled = true;
+    }
+
+    private IEnumerator DirectorDelay()
+    {
+        yield return new WaitForSeconds(directorDelay);
+        director.Play();
     }
 }

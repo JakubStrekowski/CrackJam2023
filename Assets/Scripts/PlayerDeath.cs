@@ -10,12 +10,21 @@ using UnityEngine.SceneManagement;
 public class PlayerDeath : MonoBehaviour
 {
     public UnityEvent OnPlayerDeath;
+    public UnityEvent OnPlayerTutorialDeath;
     public GameObject deathParticles;
+    [SerializeField] private RestartDecider restartData;
+    private Vector3 _startPos;
     
     private bool isDead = false;
+    private bool deathLock = false;
 
     public float ImmuneTime;
     private float _lastImmuneTime = Single.MinValue;
+
+    private void Start()
+    {
+        _startPos = transform.position;
+    }
 
     public void Immune()
     {
@@ -32,8 +41,28 @@ public class PlayerDeath : MonoBehaviour
 
     public void SetDeath()
     {
-        isDead = true;
+        if (restartData.isTutorialDeath)
+        {
+            if (!deathLock)
+            {
+                StartCoroutine(nameof(DeathLocked));
+            }
+        }
+        else
+        {
+            isDead = true;
+            Instantiate(deathParticles, transform.position, quaternion.identity);
+            OnPlayerDeath?.Invoke();
+        }
+    }
+
+    private IEnumerator DeathLocked()
+    {
+        deathLock = true;
         Instantiate(deathParticles, transform.position, quaternion.identity);
-        OnPlayerDeath?.Invoke();
+        transform.position = _startPos;
+        OnPlayerTutorialDeath?.Invoke();
+        yield return new WaitForSeconds(0.2f);
+        deathLock = false;
     }
 }
