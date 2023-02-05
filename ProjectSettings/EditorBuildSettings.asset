@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 2df2ff3b817c4e0488a627b44e1768f9
   - enabled: 1
-    path: Assets/Scenes/Gameplay.unity
-    guid: a5b2321e017af47529171ba9c247d1d9
+    path: Assets/Scenes/StartHackTest.unity
+    guid: 122860fcaffc3d64283d215d742048fc
   - enabled: 1
     path: Assets/Scenes/FinalScene.unity
     guid: 6657a52b7c6950146bdd7258124d6927
