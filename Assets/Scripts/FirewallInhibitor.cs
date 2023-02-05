@@ -15,6 +15,7 @@ public class FirewallInhibitor : MonoBehaviour
     [SerializeField] private UnityEvent onCompromised;
     [SerializeField] private UnityEvent onEnteredOnTime;
     [SerializeField] private PlayerDeath playerDeath;
+    [SerializeField] private AudioClip enterClip;
 
     public GameObject SuccessParticles;
 
@@ -111,6 +112,7 @@ public class FirewallInhibitor : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             onEnteredOnTime?.Invoke();
+            AudioSource.PlayClipAtPoint(enterClip, transform.position);
             gameObject.SetActive(false);
         }
     }
