@@ -32,6 +32,7 @@ public class Rumba : MonoBehaviour
     {
         yield return new WaitForSeconds(delat);
         body.isKinematic = false;
+        Saw.SetActive(true);
 
         yield return new WaitForSeconds(delay2);
         while (true)
