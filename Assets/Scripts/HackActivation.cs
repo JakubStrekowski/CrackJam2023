@@ -31,6 +31,7 @@ public class HackActivation : MonoBehaviour
     {
         col.enabled = false;
 
+        #if UNITY_EDITOR
         if (SkipTutorial)
         {
             hackText.SetActive(true);
@@ -40,6 +41,7 @@ public class HackActivation : MonoBehaviour
             pos.y = 0;
             FindObjectOfType<PlayerMovement>().transform.position = pos;
         }
+        #endif
     }
 
     private void OnTriggerEnter(Collider other)
