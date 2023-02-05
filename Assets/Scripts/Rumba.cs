@@ -16,6 +16,10 @@ public class Rumba : MonoBehaviour
 
     public float delat, delay2;
     public float interval;
+
+    public GameObject Saw;
+
+    public float SawRot;
     
     private void Awake()
     {
@@ -40,10 +44,12 @@ public class Rumba : MonoBehaviour
     private void FixedUpdate()
     {
         body.velocity = direction * speed;
+        
     }
 
     private void Update()
     {
+        Saw.transform.Rotate(0f, SawRot * Time.deltaTime, 0f);
         if(!body.isKinematic)
         transform.Rotate(0f, rotation * Time.deltaTime, 0f);
     }
@@ -64,6 +70,10 @@ public class Rumba : MonoBehaviour
             direction = Vector3.Reflect(direction, other.contacts[0].normal);
             direction.y = 0;
             direction = direction.normalized;
+        }
+        else
+        {
+            other.rigidbody.GetComponent<PlayerDeath>().SetDeath();
         }
     }
 }
