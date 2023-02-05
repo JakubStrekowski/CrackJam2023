@@ -44,6 +44,7 @@ public class HackActivation : MonoBehaviour
     public void OnStartHack(InputAction.CallbackContext ctx )
     {
         if (_wasActivated) return;
+        if (hackText == null) return;
         if (!hackText.activeInHierarchy) return;
 
         particleSystemRoot.SetActive(false);

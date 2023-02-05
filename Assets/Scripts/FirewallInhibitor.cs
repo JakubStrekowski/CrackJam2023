@@ -68,7 +68,10 @@ public class FirewallInhibitor : MonoBehaviour
     {
         StopCoroutine(nameof(CountDown));
         _sequence.Pause();
-        compromiseSlider.gameObject.SetActive(false);
+        if (compromiseSlider != null)
+        {
+            compromiseSlider.gameObject.SetActive(false);
+        }
     }
 
     private IEnumerator CountDown()
