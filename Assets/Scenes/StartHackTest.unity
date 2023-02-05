@@ -553,6 +553,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3220641363214092821, guid: f113d38a4954cbb4e9ff928650f2f65b,
+        type: 3}
+      propertyPath: OnPlayerDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1258247794}
     - target: {fileID: 6338660217179781555, guid: f113d38a4954cbb4e9ff928650f2f65b,
         type: 3}
       propertyPath: m_RootOrder
@@ -1445,6 +1450,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1254610512}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1258247794 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7084885069854528903, guid: d238c99598ce3a84687872b42c355b89,
+    type: 3}
+  m_PrefabInstance: {fileID: 976940721}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1296369257 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9051113175624930693, guid: 00481dba260b546cc955b7f51d56e8d9,

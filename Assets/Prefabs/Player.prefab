@@ -1013,19 +1013,7 @@ MonoBehaviour:
     m_ActionId: 1a503964-43e7-45a6-aa62-19312d8607df
     m_ActionName: Player/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3220641363214092821}
-        m_TargetAssemblyTypeName: PlayerDeath, Assembly-CSharp
-        m_MethodName: Restart
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 9335f431-a357-4dae-b56f-1138c8f2a006
     m_ActionName: Player/Interact[/Keyboard/e]
   - m_PersistentCalls:
@@ -1132,6 +1120,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  deathParticles: {fileID: 896630175644955464, guid: 7e18228f6800c0c4dbad51ee27392558,
+    type: 3}
   ImmuneTime: 0.1
 --- !u!1001 &1428624775111154083
 PrefabInstance:

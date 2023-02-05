@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -9,6 +10,7 @@ using UnityEngine.SceneManagement;
 public class PlayerDeath : MonoBehaviour
 {
     public UnityEvent OnPlayerDeath;
+    public GameObject deathParticles;
     
     private bool isDead = false;
 
@@ -22,13 +24,6 @@ public class PlayerDeath : MonoBehaviour
 
     public bool IsImmune() => Time.time < _lastImmuneTime + ImmuneTime;
 
-    public void Restart ( InputAction.CallbackContext ctx )
-    {
-        if (!isDead) return;
-        
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
     public void TrySetDeath()
     {
         if (IsImmune()) return;
@@ -38,6 +33,7 @@ public class PlayerDeath : MonoBehaviour
     public void SetDeath()
     {
         isDead = true;
+        Instantiate(deathParticles, transform.position, quaternion.identity);
         OnPlayerDeath?.Invoke();
     }
 }
