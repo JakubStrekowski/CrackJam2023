@@ -13,6 +13,12 @@ public class TimelineProgress : MonoBehaviour
     [SerializeField] private TMP_Text victoryText;
 
     private PlayableDirector _director;
+    private bool _isLocked;
+
+    public void LockHackProgress()
+    {
+        _isLocked = true;
+    }
     private void Awake()
     {
         _director = GetComponent<PlayableDirector>();
@@ -20,6 +26,8 @@ public class TimelineProgress : MonoBehaviour
 
     private void Update()
     {
+        if (_isLocked) return;
+        
         if (slider.IsActive())
         {
             slider.value = (float)(_director.time / _director.duration);
