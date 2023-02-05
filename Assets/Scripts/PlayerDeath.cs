@@ -13,6 +13,7 @@ public class PlayerDeath : MonoBehaviour
     public UnityEvent OnPlayerTutorialDeath;
     public GameObject deathParticles;
     [SerializeField] private RestartDecider restartData;
+    [SerializeField] private AudioClip deathSound;
     private Vector3 _startPos;
     
     private bool isDead = false;
@@ -50,6 +51,7 @@ public class PlayerDeath : MonoBehaviour
         }
         else
         {
+            AudioSource.PlayClipAtPoint(deathSound, transform.position);
             isDead = true;
             Instantiate(deathParticles, transform.position, quaternion.identity);
             OnPlayerDeath?.Invoke();
